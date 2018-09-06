@@ -19,20 +19,3 @@ hh_cities = { "Rio" => 9000000, "Milan" => 2000000, "Toronto" => 6000000 }
 # puts hh_cities
 hh_siblings = {"Hal" => 32, "Bardolph" => 37, "Falstaff" => 34, "Pistol" => 21 }
 # puts hh_siblings
-
-
-# 1. Print out the array of coin flips.
-puts ar_coinflip
-
-# 2. Print out the first element of the array of your favourite colours.
-puts ar_colours.first
-
-# 3. Output the sorted version of the array of your friends and family members' ages.
-puts ar_age.sort
-
-# 4. Add a new baby (0 years old) to the array of your family's ages.
-ar_age << 0
-puts ar_age
-
-# 5. Using the hash of movie information, access and print the year of one of the movies.
-puts hh_movies["The Good, the Bad and the Ugly"]
