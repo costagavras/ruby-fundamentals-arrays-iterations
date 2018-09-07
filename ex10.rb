@@ -33,12 +33,14 @@ puts "---------------------------"
 puts hh_bitmaker_students.class
 
 #map on hash gives back an array, not a hash
-hh_bitmaker_students_plus5pc = hh_bitmaker_students.map do |cohorts, students|
-                              [cohorts, students * 1.05]
-                            end
-
 #attempting to keep the hash a hash avoiding "map"
-# hh_bitmaker_students.transform_values { |cohorts, students| students * 1.05 }
+
+hh_bitmaker_students_plus5pc = hh_bitmaker_students.transform_values { |students| students * 1.05 }
+
+#no map alternative
+hh_bitmaker_students_plus5pc = hh_bitmaker_students.each do |cohorts, students|
+                                hh_bitmaker_students[cohorts] = students * 1.05
+                              end
 
 
 puts hh_bitmaker_students_plus5pc.class
@@ -48,9 +50,9 @@ puts "---------------------------"
 
 # 6. Delete the 2nd cohort and redisplay the hash.
 
-hh_bitmaker_students.delete(:cohort2)
+hh_bitmaker_students_plus5pc.delete(:cohort2)
 puts "---------------------------"
-puts hh_bitmaker_students
+puts hh_bitmaker_students_plus5pc
 
 # 7. BONUS: Calculate the total number of students across all cohorts using each and a variable to keep track of the total. Output the result.
 
