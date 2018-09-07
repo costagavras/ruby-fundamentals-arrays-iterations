@@ -6,7 +6,7 @@ hh_bitmaker_students = { :cohort1 => 34, :cohort2 => 42, :cohort3 => 22 }
 
 def show_vertical(my_hash)
     my_hash.each do |cohort, students|
-      puts "#{cohort}: #{students} students \n"
+      puts "#{cohort}: #{students} people \n"
     end
 end
 
@@ -51,3 +51,19 @@ puts "---------------------------"
 hh_bitmaker_students.delete(:cohort2)
 puts "---------------------------"
 puts hh_bitmaker_students
+
+# 7. BONUS: Calculate the total number of students across all cohorts using each and a variable to keep track of the total. Output the result.
+
+hh_bitmaker_students = { :cohort1 => 34, :cohort2 => 42, :cohort3 => 22 }
+
+i_student_count = 0 #to initialise variable as integer type
+hh_bitmaker_students.each do |cohort, student|
+  i_student_count += student
+end
+puts i_student_count
+
+# 8. BONUS: Create another similar hash called staff and display it using the display method from above.
+
+hh_bitmaker_staff = { :instructors => 20, :admin => 12, :faris => 1 }
+
+show_vertical(hh_bitmaker_staff)
